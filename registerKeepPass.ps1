@@ -1,13 +1,13 @@
 Install-Module Microsoft.PowerShell.SecretManagement, Microsoft.PowerShell.SecretStore
-Install-Module -Name SecretManagement.KeePass 
-
+Install-Module -Name SecretManagement.KeePass
+ 
 Import-Module Microsoft.PowerShell.SecretManagement, Microsoft.PowerShell.SecretStore
 Import-module SecretManagement.KeePass
 Add-Type -AssemblyName System.Windows.Forms
 
 # Set path to KeePass file and test it exists
-$FileBrowser = New-Object System.Windows.Forms.OpenFileDialog 
-$FileBrowser.InitialDirectory = [Environment]::GetFolderPath('Desktop') 
+$FileBrowser = New-Object System.Windows.Forms.OpenFileDialog
+$FileBrowser.InitialDirectory = [Environment]::GetFolderPath('Desktop')
 $FileBrowser.Filter = 'KeepassDB (*.kdbx) | *.kdbx'
 $FileBrowser.Title = 'Select where you have your keeppass db.'
 [void]$FileBrowser.ShowDialog()
